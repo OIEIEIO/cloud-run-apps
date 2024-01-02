@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #333;
+}
+
+.calculator {
+    border: 1px solid #888;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #222;
+    color: white;
+    width: 300px; /* Set a fixed width for the calculator */
+    display: flex;
+    flex-direction: column;
+}
+
+.calculator-screen {
+    width: 100%;
+    padding: 0px 0px 10px 0px;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    overflow: hidden; /* Prevent content from overflowing */
+    display: grid;
+    grid-template-rows: 1fr 1fr; /* Divide the screen into two rows */
+    gap: 5px; /* Space between the entry and solution */
+    align-items: center; /* Center items vertically */
+}
+
+.entry, .solution {
+    text-align: center;
+    font-size: 1.5em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.entry {
+    color: rgba(255, 255, 255, 0.7); /* Lighter color for entry */
+}
+
+.solution {
+    color: #0f0; /* Standard green for a solution/result */
+    font-weight: bold;
+}
+
+.calculator-keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr); /* Define 5 rows if necessary for your layout */
+    gap: 10px;
+    margin: 20px 0;
+}
+
+button {
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5em; /* Increase font size for better readability */
+    cursor: pointer; /* Change cursor to pointer when hovering over the buttons */
+}
+
+/* Number buttons */
+button.number {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Function buttons */
+button.function {
+    background-color: #4d4b44; /* Dark gray color for function buttons */
+    color: #fff;
+}
+
+/* Equal button */
+button.equal-sign {
+    background-color: #2ecc71; /* Green color for the equals button */
+    color: #fff;
+    grid-column: span 2; /* Make the equals button take up two columns */
+}
+
+/* Clear and delete buttons */
+button.clear, button.del {
+    background-color: #e74c3c; /* Red color for clear and delete */
+    color: #fff;
+}
